@@ -19,7 +19,7 @@
         $mysql = new mysqli('localhost', $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE);
         
         $qstr = $mysql->real_escape_string($_GET['query']);
-        $query = "SELECT amount FROM plaidcoin_wallets WHERE id=$qstr";
+        $query = "SELECT amount FROM ufowallet WHERE id=$qstr";
         $result = $mysql->query($query);
         $line = $result->fetch_array(MYSQLI_ASSOC);
         foreach ($line as $col_value) {
@@ -27,10 +27,9 @@
         }
     }
     else {
-       echo "<html><head><title>MtPOX Admin Page</title></head><body>Welcome to the admin panel!<br /><br /><form name='input' action='admin.php' method='get'>Wallet ID: <input type='text' name='query'><input type='submit' value='Submit Query'></form></body></html>";}
+       echo "<html><head><title>Admin Page</title></head><body>Welcome to the admin panel!<br /><br /><form name='input' action='admin.php' method='get'>Wallet ID: <input type='text' name='query'><input type='submit' value='Submit Query'></form></body></html>";}
   }
   else {
     echo "Sorry, not authorized.";
   }
-
 ?>

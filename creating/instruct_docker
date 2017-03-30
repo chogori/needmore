@@ -1,0 +1,14 @@
+sudo docker search linode
+sudo docker pull linode/lamp
+sudo docker run -p 8000:80 -t -i linode/lamp /bin/bash
+sudo docker cp <путь к данным на хосте> <имя контейнера>:<путь>
+apt-get update
+apt-get install php5-mysql
+/etc/init.d/apache2 start
+/etc/init.d/mysql start
+Потом файл create_base в mysql
+и таск готов
+флаг ufoctf{myY_CooOinNs}
+
+
+

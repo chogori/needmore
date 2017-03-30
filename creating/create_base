@@ -1,0 +1,6 @@
+create user 'ufo'@'localhost' identified by 'ufoufo';
+CREATE DATABASE ufobank;
+USE ufobank;
+create table ufowallet (id varchar(40) not null, amount int(30) not null default 0, primary key(id));
+INSERT INTO ufowallet VALUES ('ufoctf{myY_CooOinNs}', 1333337);
+GRANT ALL ON ufobank.* to 'ufo'@'localhost';
